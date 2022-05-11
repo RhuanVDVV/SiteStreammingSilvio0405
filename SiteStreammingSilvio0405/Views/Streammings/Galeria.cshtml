@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SiteStreammingSilvio0405.Models.Streamming>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+	<div class="row">
+		@foreach (var streaming in Model)
+		{
+			<div class="col col-4">
+
+				<div class="card" style="width: 18rem;">
+					@if (streaming.Tipo == ".mp4")
+					{
+						<video class="video" controls>
+							<source src="~/arq/@streaming.Titulo" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					}
+					else
+					{
+						if (streaming.Tipo == ".webm")
+						{
+							<video class="video" controls>
+								<source src="~/arq/@streaming.Titulo" type="video/webm">
+								Your browser does not support the video tag.
+							</video>
+						}
+						else
+						{
+							if (streaming.Tipo == ".ogg")
+							{
+								<video class="video" controls>
+									<source src="~/arq/@streaming.Titulo" type="video/ogg">
+									Your browser does not support the video tag.
+								</video>
+							}
+							else
+							{
+								if (streaming.Tipo == ".mp3")
+								{
+									<audio class="video" controls>
+										<source src="~/arq/@streaming.Titulo" type="video/mpeg">
+										Your browser does not support the video tag.
+									</audio>
+								}
+								else
+								{
+									if (streaming.Tipo == ".wav")
+									{
+										<audio class="video" controls>
+											<source src="~/arq/@streaming.Titulo" type="video/wav">
+											Your browser does not support the video tag.
+										</audio>
+									}
+									else
+									{
+										<img class="imagem" src="~/arq/@streaming.Titulo" />
+									}
+
+								}
+
+							}
+						}
+					}
+
+					<div class="card-body">
+						<h5 class="Titulo"></h5>
+						<p class="card-text">@streaming.Descricao</p>
+						<a href="#" class="btn btn-primary">Assistir</a>
+					</div>
+				</div>
+			</div>
+		}
+
+
+	</div>
+</div>
+
