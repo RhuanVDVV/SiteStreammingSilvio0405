@@ -9,38 +9,66 @@
     <link rel="stylesheet" href="~/SiteStreammingSilvio0405.styles.css" asp-append-version="true" />
 </head>
 <body>
+    
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SiteStreammingSilvio0405</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+        <nav class="flex-div">
+            
+            <div class="nav-left flex-div" >
+
+                <img class="menu-icon" src="~/arq/menu.png" >
+                <a asp-controller="Home" asp-action="Index"><img class="logo" src="~/arq/logo.png" /></a>
+                
             </div>
-        </nav>
+            <div class="nav-middle flex-div">
+                <div  class="search-box flex-div">
+                    <input type="text" placeholder="Procurar" />
+                    <img src="~/arq/search.png" />
+                </div>
+                <img src="~/arq/voice-search.png" class="mic-icon" >
+            </div>
+            <div class="nav-right flex-div">
+                <a asp-controller="Streammings" asp-action="Index"><img src="~/arq/upload.png" /></a>
+                <img src="~/arq/more.png" >
+                <img src="~/arq/notification.png" />
+                <img class="user-icon" src="~/arq/tyler4.png" >
+            </div>
+         </nav>
+        
+
+
+
+
+       
     </header>
+     <div class="sidebar" >
+             <div class="shortcut-links"> 
+                 <a href=""><img src="~/arq/home.png" /> <p>Inicio</p></a>
+                 <a href=""><img src="~/arq/explore.png" /><p>Explore</p></a>
+                 <a href=""><img src="~/arq/subscriprion.png" /><p>Inscrições</p></a>
+                 <a href=""><img src="~/arq/library.png" /><p>Biblioteca</p></a>
+                 <a href=""><img src="~/arq/history.png" /><p>Historico</p></a>
+                 <a href=""><img src="~/arq/playlist.png" /><p>Playlists</p></a>
+                 <a href=""><img src="~/arq/messages.png" /><p>Mensagens</p></a>
+                 <a href=""><img src="~/arq/show-more.png" /><p>Veja Mais</p></a>
+                 <hr />
+             </div>
+             <div class="subscribed-list">
+                 <h3>INSCRIÇÕES</h3>
+                 <a href=""> <img src="~/arq/tyler1.png" > <p>Trom Catt</p></a>
+                 <a href=""> <img src="~/arq/tyler2.png" ><p>Wolf Hayley</p></a>
+                 <a href=""> <img src="~/arq/tyler3.png" > <p>Felicia the Goat</p> </a>
+                 <a href=""> <img src="~/arq/tyler4.png" > <p>OFWGKA</p></a>
+                 <a href=""> <img src="~/arq/tyler5.png" ><p>IGOR </p> </a>
+                 
+             </div>
+         </div>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - SiteStreammingSilvio0405 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

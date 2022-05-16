@@ -1,8 +1,98 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<SiteStreammingSilvio0405.Models.Streamming>
+@{
+	ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+	<div class="banner">
+		<a src="~/arq/bannerteste"></a>
+	</div>
+	<div class="list-container">
+		@foreach (var streaming in Model)
+		{
+			<div class="vid-list">
+
+				<div class="thumbnail"> 
+				@if (streaming.Tipo == ".mp4")
+				{
+					<video  controls>
+						<source src="~/arq/@streaming.Titulo" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				}
+				else
+				{
+					if (streaming.Tipo == ".webm")
+					{
+						<video  controls>
+							<source src="~/arq/@streaming.Titulo" type="video/webm">
+							Your browser does not support the video tag.
+						</video>
+					}
+					else
+					{
+						if (streaming.Tipo == ".ogg")
+						{
+							<video  controls>
+								<source src="~/arq/@streaming.Titulo" type="video/ogg">
+								Your browser does not support the video tag.
+							</video>
+						}
+						else
+						{
+							if (streaming.Tipo == ".mp3")
+							{
+								<audio  controls>
+									<source src="~/arq/@streaming.Titulo" type="video/mpeg">
+									Your browser does not support the video tag.
+								</audio>
+							}
+							else
+							{
+								if (streaming.Tipo == ".wav")
+								{
+									<audio  controls>
+										<source src="~/arq/@streaming.Titulo" type="video/wav">
+										Your browser does not support the video tag.
+									</audio>
+								}
+								else
+								{
+									<img src="~/arq/@streaming.Titulo" />
+								}
+
+							}
+
+						}
+					}
+				}
+				</div>
+
+				<div class="flex-div">
+					<img src="~/arq/tyler2.png">
+					<div class="vid-info">
+						<a asp-controller="Streammings" asp-action="Details" asp-route-id="@streaming.Id">@streaming.Descricao</a>
+
+
+
+						<p>
+							Canal aleatorio
+						</p>
+						<p>
+							15m visualizações 2 dias
+						</p>
+
+					</div>
+				</div>
+
+			</div>
+		}
+
+
+
+
+	</div>
+
+
+
+

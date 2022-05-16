@@ -2,42 +2,229 @@
 
 @{
     ViewData["Title"] = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layoutdetails.cshtml";
+    
 }
 
-<h1>Details</h1>
+<div class="container-player player-container">
+    <div class="row">
+        <div class="play-video">
+            @if (@Model.Tipo == ".mp4")
+            {
 
-<div>
-    <h4>Streamming</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Size)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Size)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Tipo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Tipo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Titulo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Titulo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descricao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descricao)
-        </dd>
-    </dl>
+                <video class="video" controls>
+
+
+                    <source class=thumbnail src="~/arq/@Model.Titulo" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+
+            }
+            else
+            {
+                if (@Model.Tipo == ".webm")
+                {
+
+                    <audio class="video" controls>
+
+
+                        <source class=thumbnail src="~/arq/@Model.Titulo" type="video/wav">
+                        Your browser does not support the video tag.
+                    </audio>
+
+
+                }
+                else
+                {
+                    if (@Model.Tipo == ".ogg")
+                    {
+
+                        <video class="video" controls>
+
+
+                            <source class=thumbnail src="~/arq/@Model.Titulo" type="video/ogg">
+                            Your browser does not support the video tag.
+                        </video>
+
+
+                    }
+                    else
+                    {
+                        if (@Model.Tipo == ".mp3")
+                        {
+
+                            <audio class="video" controls>
+
+
+                                <source class=thumbnail src="~/arq/@Model.Titulo" type="audio/mp3">
+                                Your browser does not support the video tag.
+                            </audio>
+
+
+                        }
+                        else
+                        {
+                            if (@Model.Tipo == ".wav")
+                            {
+
+                                <audio class="video" controls>
+
+
+                                    <source class=thumbnail src="~/arq/@Model.Titulo" type="audio/wav">
+                                    Your browser does not support the video tag.
+                                </audio>
+
+                            }
+                            else
+                            {
+                                <img src="~/arq/@Model.Titulo">
+
+                            }
+
+                        }
+
+                    }
+                }
+            }
+
+            <div class="tags">
+                <a href="">#Aula</a>
+                <a href="">#Silvio</a>
+                <a href="">#Recriando</a>
+                <a href="">#Youtube</a>
+                <a href="">#Mas</a>
+                <a href="">#Falhando</a>
+            </div>
+            <h3>@Model.Descricao</h3>
+            <div class="play-video-info">
+                <p>2123 visualizações &bull; 2 diasatras </p>
+                <div class="botoes">
+                    <a href=""><img src="~/arq/like.png" /> 123,2 MIL </a>
+                    <a href=""><img src="~/arq/dislike.png" /> NÃO GOSTEI </a>
+                    <a href=""><img src="~/arq/share.png" /> Compartilhar </a>
+                    <a href=""><img src="~/arq/save.png" /> Salvar </a>
+                </div>
+
+            </div>
+            <hr />
+            <div class="publisher">
+                <img src="~/arq/tyler2.png" />
+                <div>
+                    <p>canalzin Aleatorio</p>
+                    <span>123 Inscritos</span>
+                </div>
+                <button type="button">INSCREVER-SE</button>
+            </div>
+            <div class="vid-description">
+                <p>Canal aleatorio so pra fazer o trabalho</p>
+                <p>Se inscreva para receber nada</p>
+                <hr />
+                <h4>134 Comentários</h4>
+                <div class="add-comment">
+                    <img src="~/arq/tyler4.png">
+                    <input type="text" placeholder="Adicione um comentário..." />
+                </div>
+                <div class="old-comment">
+                    <img src="~/arq/tyler2.png">
+                    <div>
+                        <h3>Trom Cat <span>4 dias atrás</span></h3>
+                        <p>Coe professor foi mal pela demora mas tentei entregar o maximo que conseguia, deixa passar ai pfv</p>
+                        <div class="acomment-action">
+                            <img src="~/arq/like.png"/>
+                            <span >387</span>
+                            <img src="~/arq/dislike.png"/>
+                            <span> RESPONDER</span>
+                            <a href="">Ver Respostas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="right-sidebar">
+            <div class="side-video-list">
+                <a class="small-thumbnail" href="#"><img src="~/arq/tyler.jpg" /></a>
+
+                <div class="vid-info">
+                    <a href="#">Tim Mai melhores musicas</a>
+                    <p>Tyler Okonma</p>
+                    <p>200m Views </p>
+                </div>
+            </div>
+
+
+            <div class="right-sidebar">
+                <div class="side-video-list">
+                    <a class="small-thumbnail" href="#"><img src="~/arq/timmaia.webp" /></a>
+
+                    <div class="vid-info">
+                        <a href="#">Tyler the creator - Best Side</a>
+                        <p>MPB records</p>
+                        <p>200m Views </p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-sidebar">
+                <div class="side-video-list">
+                    <a class="small-thumbnail" href="#"><img src="~/arq/tyler.jpg" /></a>
+
+                    <div class="vid-info">
+                        <a href="#">Tyler the creator - Best Side</a>
+                        <p>Tyler Okonma</p>
+                        <p>200m Views </p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-sidebar">
+                <div class="side-video-list">
+                    <a class="small-thumbnail" href="#"><img src="~/arq/timmaia.webp" /></a>
+
+                    <div class="vid-info">
+                        <a href="#">Tim Mai melhores musicas</a>
+                        <p>MPB records</p>
+                        <p>200m Views </p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-sidebar">
+                <div class="side-video-list">
+                    <a class="small-thumbnail" href="#"><img src="~/arq/tyler.jpg" /></a>
+
+                    <div class="vid-info">
+                        <a href="#">Tyler the creator - Best Side</a>
+                        <p>Tyler Okonma</p>
+                        <p>200m Views </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-sidebar">
+                <div class="side-video-list">
+                    <a class="small-thumbnail" href="#"><img src="~/arq/timmaia.webp" /></a>
+
+                    <div class="vid-info">
+                        <a href="#">Tim Mai melhores musicas</a>
+                        <p>MPB records</p>
+                        <p>200m Views </p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-sidebar">
+                <div class="side-video-list">
+                    <a class="small-thumbnail" href="#"><img src="~/arq/tyler.jpg" /></a>
+
+                    <div class="vid-info">
+                        <a href="#">Tyler the creator - Best Side</a>
+                        <p>Tyler Okonma</p>
+                        <p>200m Views </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+
+
